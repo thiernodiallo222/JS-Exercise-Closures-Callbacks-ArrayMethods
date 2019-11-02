@@ -48,8 +48,9 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+/* CODE HERE */
+  return callback(list.length)
 }
 
 /**
@@ -66,8 +67,10 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback) {
+/* CODE HERE */
+  const lastIndex = stringList.length - 1;
+  return callback(stringList[lastIndex])
 }
 
 /**
@@ -87,8 +90,13 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+/* CODE HERE */
+  let sum = 0;
+  for (let i = 0; i < numberList.length; i++){
+     sum+= numberList[i];
+  }
+  return callback(sum)
 }
 
 /**
@@ -109,8 +117,11 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+
+  let product = num1 * num2;
+  
+  return callback(product);
 }
 
 /**
@@ -133,9 +144,18 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processContains(item, list, callback) {
+/* CODE HERE */
+  let flag = null;
+  for (let i = 0; i < list.length; i++){
+    if (list[i] === item) {
+    flag = true;
+    } 
+    flag = false;
+  } 
+      return callback(flag);
+  }
+
 
 /**
  * ### Challenge `processDuplicateFree`
